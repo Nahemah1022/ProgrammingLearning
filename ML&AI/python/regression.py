@@ -33,15 +33,22 @@ for i in range(len(bias)):
 # y_data = b + w * x_data
 b = -120  # initial b
 w = -4  # initial w
-lr = 0.0000001  # learning rate
+lr = 1  # learning rate
 iteration = 100000
 b_history = [b]
 w_history = [w]
 
+lr_b = 0
+lr_w = 0
+
 for i in range(iteration):
     b_grad, w_grad = getGrad(b, w)
-    b -= lr * b_grad
-    w -= lr * w_grad
+
+    lr_b += b_grad ** 2
+    lr_w += w_grad ** 2
+
+    b -= lr/np.sqrt(lr_b) * b_grad
+    w -= lr/np.sqrt(lr_w) * w_grad
 
     b_history.append(b)
     w_history.append(w)
