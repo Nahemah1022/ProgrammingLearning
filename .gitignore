@@ -20,3 +20,9 @@ yarn-error.log*
 *.sln
 *.sw?
 node_modules
+
+data/
+ML&AI/python/stock/bin/env
+ML&AI/python/stock/bin/json
+ML&AI/python/stock/bin/models
+ML&AI/python/stock/bin/__pycache__
