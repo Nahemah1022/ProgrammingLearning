@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <h1>TODO List</h1>
+
+    <div class="content">
+
+        <form id="add-todo-form">
+            <input type="text" name="title" placeholder="TODO Title">
+            <input type="text" name="time" placeholder="YYYY/MM/DD">
+            <button>Add TODO</button>
+        </form>
+
+        <ul id="TODO-list"></ul>
+
+    </div>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyCV8Jl4fFA3sAZcr95QD7Y3KnKPhFDFpuI",
+            authDomain: "firestorepractice-bfad3.firebaseapp.com",
+            databaseURL: "https://firestorepractice-bfad3.firebaseio.com",
+            projectId: "firestorepractice-bfad3",
+            storageBucket: "firestorepractice-bfad3.appspot.com",
+            messagingSenderId: "820005286856",
+            appId: "1:820005286856:web:9f6875c195e18bb122c6fd",
+            measurementId: "G-MWD7RE3YR4"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true });
+    </script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
